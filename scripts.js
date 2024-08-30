@@ -15,6 +15,7 @@ function addToCart(productName) {
     
     updateCartCount();
     saveCart();
+    displayCartItems();  // Ensure cart items are displayed
     
     // Show alert when item is added to the cart
     alert(`${productName} सफलतापूर्वक कार्ट में जोड़ा गया है!`);
@@ -49,6 +50,7 @@ function loadCart() {
     if (storedCart) {
         cart = JSON.parse(storedCart);
         updateCartCount();
+        displayCartItems();  // Display items after loading
     }
 }
 
@@ -77,7 +79,7 @@ function displayCartItems() {
 
     cartTotal.textContent = `कुल: ₹${total}`;
 }
-  
+
 // Change quantity of item in the cart
 function changeQuantity(productName, amount) {
     const product = cart.find(item => item.name === productName);
@@ -105,20 +107,20 @@ function removeFromCart(productName) {
 // Initialize cart on page load
 function initializeCart() {
     loadCart();
-    if (document.getElementById('cart-items')) {
-        displayCartItems();
-    }
 }
 
 // Feedback Form Handling
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+document.getElementById('feedbackForm')?.addEventListener('submit', function(event) {
     event.preventDefault();
     alert('Thank you for your feedback!');
     this.reset();
 });
+
 // Event listener for checkout button
 document.getElementById('checkout')?.addEventListener('click', function() {
     alert('चेकआउट अभी उपलब्ध नहीं है।');
 });
 
+// Call initializeCart on page load
 window.onload = initializeCart;
+
