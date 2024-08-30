@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बद्री फार्म - कार्ट</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>बद्री फार्म</h1>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="index.html">होम</a>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#products">उत्पाद</a>
+        <a href="#gallery">गैलरी</a>
+        <a href="#contact">संपर्क करें</a>
+        <a id="cart-link" href="cart.html">कार्ट <span id="cart-count">0</span></a>
+    </div>
+</nav>
+
+<div id="cart" class="section">
+    <div class="container">
+        <h2>आपका कार्ट</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </ul>
+        <div id="cart-total"></div>
+        <button id="checkout">चेकआउट</button>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
